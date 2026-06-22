@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dacia Sandero Stepway — Guide Garanties & Entretien</title>
+<style>
+  :root {
+    --dacia-yellow: #F5C518;
+    --dacia-dark: #1A1A1A;
+    --dacia-gray: #F4F4F2;
+    --dacia-mid: #6B6B6B;
+    --dacia-light: #E8E8E6;
+    --green: #1E7D4A;
+    --green-bg: #EAF5EF;
+    --blue: #1A5FA8;
+    --blue-bg: #EAF1FB;
+    --amber: #9B6B00;
+    --amber-bg: #FEF5E0;
+    --red: #B83232;
+    --red-bg: #FDEAEA;
+    --white: #FFFFFF;
+    --radius: 10px;
+    --shadow: 0 2px 12px rgba(0,0,0,0.07);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    background: var(--dacia-gray);
+    color: var(--dacia-dark);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  /* HEADER */
+  header {
+    background: var(--dacia-dark);
+    color: white;
+    padding: 2.5rem 1.5rem 2rem;
+    text-align: center;
+  }
+  header .logo-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+  }
+  header .dacia-badge {
+    background: var(--dacia-yellow);
+    color: var(--dacia-dark);
+    font-weight: 700;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  header h1 {
+    font-size: clamp(22px, 4vw, 32px);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+  }
+  header p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  /* LAYOUT */
+  .container { max-width: 860px; margin: 0 auto; padding: 0 1.25rem 4rem; }
+  .section { margin-top: 2.5rem; }
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--dacia-mid);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--dacia-light);
+  }
+  /* CARDS */
+  .grid { display: grid; gap: 16px; }
+  .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+  .grid-3 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+  .card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 1.4rem;
+    box-shadow: var(--shadow);
+    border: 1.5px solid transparent;
+  }
+  .card.featured { border-color: var(--blue); }
+  .card.best-value { border-color: var(--green); }
+  .card h3 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .card .big-num {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 10px 0 2px;
+    letter-spacing: -1px;
+  }
+  .card .sub {
+    font-size: 12px;
+    color: var(--dacia-mid);
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+  /* PILLS */
+  .pill {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .pill-blue { background: var(--blue-bg); color: var(--blue); }
+  .pill-green { background: var(--green-bg); color: var(--green); }
+  .pill-amber { background: var(--amber-bg); color: var(--amber); }
+  .pill-red { background: var(--red-bg); color: var(--red); }
+  /* CHECKLIST */
+  ul.checks { list-style: none; font-size: 13px; color: #444; }
+  ul.checks li { padding: 3px 0; display: flex; align-items: flex-start; gap: 8px; }
+  ul.checks li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+  ul.checks li.warn::before { content: '⚠'; color: var(--amber); }
+  ul.checks li.cross::before { content: '✗'; color: var(--red); }
+  /* TIMELINE */
+  .timeline { position: relative; padding-left: 0; }
+  .timeline-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 0;
+    position: relative;
+  }
+  .timeline-item:not(:last-child) .t-line {
+    position: absolute;
+    left: 19px;
+    top: 38px;
+    width: 2px;
+    height: calc(100% + 4px);
+    background: var(--dacia-light);
+    z-index: 0;
+  }
+  .t-dot {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 13px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .t-dot.blue { background: var(--blue-bg); color: var(--blue); }
+  .t-dot.green { background: var(--green-bg); color: var(--green); }
+  .t-dot.amber { background: var(--amber-bg); color: var(--amber); }
+  .t-content { padding: 6px 0 20px; }
+  .t-content strong { font-size: 14px; font-weight: 600; display: block; }
+  .t-content span { font-size: 12px; color: var(--dacia-mid); }
+  /* TABLE */
+  .table-wrap { overflow-x: auto; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  table thead { background: var(--dacia-dark); color: white; }
+  table th { padding: 12px 14px; text-align: left; font-weight: 600; font-size: 12px; letter-spacing: 0.3px; }
+  table td { padding: 11px 14px; border-bottom: 1px solid var(--dacia-light); vertical-align: top; }
+  table tbody tr:last-child td { border-bottom: none; }
+  table tbody tr:hover { background: var(--dacia-gray); }
+  /* METRICS */
+  .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 1rem; }
+  .metric {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 1rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+  .metric .val { font-size: 22px; font-weight: 700; display: block; margin-top: 4px; letter-spacing: -0.5px; }
+  .metric .lbl { font-size: 11px; color: var(--dacia-mid); line-height: 1.4; }
+  .val-green { color: var(--green); }
+  /* NOTE */
+  .note {
+    background: var(--amber-bg);
+    border-left: 3px solid var(--amber);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 12px 16px;
+    font-size: 13px;
+    color: #5a4000;
+    margin: 1rem 0;
+    line-height: 1.6;
+  }
+  .note strong { color: var(--amber); }
+  .info-box {
+    background: var(--blue-bg);
+    border-left: 3px solid var(--blue);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 12px 16px;
+    font-size: 13px;
+    color: #0a3060;
+    margin: 1rem 0;
+    line-height: 1.6;
+  }
+  /* FOOTER */
+  footer {
+    background: var(--dacia-dark);
+    color: rgba(255,255,255,0.45);
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 12px;
+    margin-top: 3rem;
+  }
+  footer a { color: rgba(255,255,255,0.6); }
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    header { padding: 1.8rem 1rem 1.5rem; }
+    .container { padding: 0 1rem 3rem; }
+    .card { padding: 1.1rem; }
+    table th, table td { padding: 9px 10px; font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-line">
+    <span class="dacia-badge">Dacia</span>
+  </div>
+  <h1>Sandero Stepway — Garanties & Entretien</h1>
+  <p>Guide complet : garantie 3 ans, programme Zen jusqu'à 7 ans, coût des révisions, et comparatif neuf vs occasion 2024/2025.</p>
+</header>
+
+<div class="container">
+
+  <!-- SECTION 1 : GARANTIES -->
+  <div class="section">
+    <div class="section-label">Les deux niveaux de garantie</div>
+    <div class="grid grid-2">
+
+      <div class="card">
+        <span class="pill pill-blue">Garantie de base</span>
+        <h3>Garantie constructeur</h3>
+        <div class="big-num">3 ans</div>
+        <div class="sub">ou 100 000 km — incluse à l'achat, sans conditions</div>
+        <ul class="checks">
+          <li>Défauts de matière, montage et fabrication</li>
+          <li>Valable dès la livraison du véhicule</li>
+          <li>Transférable en cas de revente</li>
+          <li>Aucune révision obligatoire pour la conserver</li>
+          <li class="warn">S'arrête à 3 ans ou 100 000 km</li>
+        </ul>
+      </div>
+
+      <div class="card featured">
+        <span class="pill pill-green">Extension gratuite</span>
+        <h3>Garantie Zen — jusqu'à 7 ans</h3>
+        <div class="big-num">+1 an / révision</div>
+        <div class="sub">ou 150 000 km max — offerte avec chaque révision officielle Dacia</div>
+        <ul class="checks">
+          <li>Extension de +1 an renouvelée à chaque révision annuelle</li>
+          <li>Incluse dans le forfait Essentielle ou Essentielle+</li>
+          <li>Zéro surcoût pour la garantie elle-même</li>
+          <li>Pièces et main-d'œuvre garanties 12 mois</li>
+          <li class="warn">Véhicule de moins de 73 mois et moins de 120 000 km</li>
+          <li class="warn">Révision obligatoire chaque année dans le réseau Dacia</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="info-box">
+      <strong>Ce n'est pas un abonnement.</strong> La garantie Zen n'est pas souscrite séparément et ne se paie pas à part. Elle est automatiquement offerte à chaque révision effectuée dans le réseau officiel Dacia avec le forfait Essentielle ou Essentielle+. Si vous manquez une révision ou allez chez un garagiste indépendant, la chaîne Zen s'interrompt.
+    </div>
+  </div>
+
+  <!-- SECTION 2 : TIMELINE -->
+  <div class="section">
+    <div class="section-label">Comment la garantie évolue dans le temps</div>
+    <div class="card" style="padding:1.5rem">
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="t-line"></div>
+          <div class="t-dot blue">0</div>
+          <div class="t-content">
+            <strong>Achat du véhicule</strong>
+            <span>Garantie constructeur 3 ans / 100 000 km activée automatiquement</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="t-line"></div>
+          <div class="t-dot blue">An 1</div>
+          <div class="t-content">
+            <strong>1ère révision officielle Dacia</strong>
+            <span>Forfait Essentielle → garantie Zen activée, couverture étendue jusqu'à l'an 2</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="t-line"></div>
+          <div class="t-dot blue">An 2</div>
+          <div class="t-content">
+            <strong>2ème révision</strong>
+            <span>Garantie Zen renouvelée → couverture étendue jusqu'à l'an 3</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="t-line"></div>
+          <div class="t-dot green">An 3</div>
+          <div class="t-content">
+            <strong>Fin garantie constructeur — la Zen prend le relais</strong>
+            <span>Si révisions faites chaque année chez Dacia, vous restez couvert sans interruption</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="t-line"></div>
+          <div class="t-dot green">An 4–6</div>
+          <div class="t-content">
+            <strong>Révisions annuelles — Zen reconduite chaque fois</strong>
+            <span>La garantie est étendue d'un an à chaque révision, jusqu'au maximum de 7 ans</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="t-dot amber">An 7</div>
+          <div class="t-content">
+            <strong>Fin du programme Zen</strong>
+            <span>Limite maximale : 7 ans ou 150 000 km, selon ce qui arrive en premier</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3 : RÉVISIONS -->
+  <div class="section">
+    <div class="section-label">Coût des révisions officielles Dacia</div>
+    <div class="note">
+      <strong>Paiement à l'acte, pas d'abonnement.</strong> Vous payez chaque révision séparément au moment où vous la faites. La garantie Zen est le bonus offert avec. Fréquence : tous les 20 000 km ou 1 an, selon ce qui arrive en premier.
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Forfait</th>
+            <th>Tarif indicatif</th>
+            <th>Ce qui est inclus</th>
+            <th>Zen activée ?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Entretien Éco</strong><br><span style="color:var(--dacia-mid);font-size:11px">Véhicule +3 ans</span></td>
+            <td><strong>à partir de 89 €</strong></td>
+            <td>Vidange, filtre à huile, 38 points de contrôle, diagnostic électronique, garantie 1 an MO+pièces</td>
+            <td><span class="pill pill-red" style="margin:0">Non ✗</span></td>
+          </tr>
+          <tr>
+            <td><strong>Révision Essentielle</strong></td>
+            <td><strong>~150–200 €</strong></td>
+            <td>86 points de contrôle, pièces d'origine Dacia, huile normée, diagnostic électronique, garantie 1 an MO+pièces</td>
+            <td><span class="pill pill-green" style="margin:0">Oui ✓</span></td>
+          </tr>
+          <tr>
+            <td><strong>Révision Essentielle+</strong><br><span style="color:var(--dacia-mid);font-size:11px">Sérénité</span></td>
+            <td><strong>~170–220 €</strong><br><span style="color:var(--dacia-mid);font-size:11px">(+20 € env. vs Essentielle)</span></td>
+            <td>Tout de l'Essentielle + véhicule de remplacement + 1 an d'assistance Dacia Service 24h/24</td>
+            <td><span class="pill pill-green" style="margin:0">Oui ✓</span></td>
+          </tr>
+          <tr>
+            <td><strong>ECO-G GPL</strong><br><span style="color:var(--dacia-mid);font-size:11px">Spécifique bicarburation</span></td>
+            <td><strong>~200–265 €</strong><br><span style="color:var(--dacia-mid);font-size:11px">Selon km et filtres</span></td>
+            <td>Révision Essentielle + filtres GPL spécifiques (phase gazeuse/liquide tous les 30 000 km). Immobilisation ~1 journée.</td>
+            <td><span class="pill pill-green" style="margin:0">Oui ✓</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note" style="margin-top:14px">
+      <strong>Prix variables selon la région.</strong> Ces tarifs sont indicatifs (réseau France/Espagne). Demandez toujours un devis au concessionnaire Dacia local avant intervention.
+    </div>
+  </div>
+
+  <!-- BANDEAU GARANTIE IDENTIQUE -->
+  <div class="section">
+    <div style="background:linear-gradient(135deg,#1E7D4A 0%,#155c35 100%);border-radius:16px;padding:2rem 2rem 1.8rem;text-align:center;box-shadow:0 4px 20px rgba(30,125,74,0.25)">
+      <div style="font-size:42px;margin-bottom:12px">✅</div>
+      <div style="color:rgba(255,255,255,0.75);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px">À savoir absolument</div>
+      <p style="color:#ffffff;font-size:clamp(20px,4vw,28px);font-weight:700;line-height:1.3;margin-bottom:14px;letter-spacing:-0.5px">
+        Neuf ou d'occasion, la garantie<br>est exactement la même.
+      </p>
+      <p style="color:rgba(255,255,255,0.85);font-size:15px;max-width:520px;margin:0 auto 1.5rem;line-height:1.7">
+        Une voiture d'occasion achetée récemment bénéficie encore de la garantie constructeur restante, et la garantie Zen peut être activée ou reprise immédiatement à la prochaine révision chez Dacia — exactement comme sur un véhicule neuf.
+      </p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;max-width:600px;margin:0 auto">
+        <div style="background:rgba(255,255,255,0.12);border-radius:10px;padding:14px 12px">
+          <div style="color:#ffffff;font-weight:700;font-size:15px;margin-bottom:4px">🛡️ Garantie constructeur</div>
+          <div style="color:rgba(255,255,255,0.8);font-size:12px;line-height:1.5">Transférable au 2ème propriétaire. La durée restante continue.</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.12);border-radius:10px;padding:14px 12px">
+          <div style="color:#ffffff;font-weight:700;font-size:15px;margin-bottom:4px">🔁 Garantie Zen</div>
+          <div style="color:rgba(255,255,255,0.8);font-size:12px;line-height:1.5">Activable sur toute Dacia &lt;73 mois et &lt;120 000 km, neuve ou non.</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.12);border-radius:10px;padding:14px 12px">
+          <div style="color:#ffffff;font-weight:700;font-size:15px;margin-bottom:4px">💶 Seule différence</div>
+          <div style="color:rgba(255,255,255,0.8);font-size:12px;line-height:1.5">Le prix d'achat — 3 000 à 5 000 € d'économie en occasion.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 4 : NEUF VS OCCASION -->
+  <div class="section">
+    <div class="section-label">Comparatif — Neuf vs Occasion 2024/2025</div>
+
+    <div class="metrics">
+      <div class="metric">
+        <span class="lbl">Neuf — Stepway Extreme ECO-G 120</span>
+        <span class="val">19 300 €</span>
+      </div>
+      <div class="metric">
+        <span class="lbl">Occasion 2024/2025 — ECO-G 100</span>
+        <span class="val">14 000–16 000 €</span>
+      </div>
+      <div class="metric">
+        <span class="lbl">Économie estimée</span>
+        <span class="val val-green">~3 000–5 000 €</span>
+      </div>
+      <div class="metric">
+        <span class="lbl">Révision annuelle (réseau Dacia)</span>
+        <span class="val">~200 €/an</span>
+      </div>
+    </div>
+
+    <div class="grid grid-2">
+
+      <div class="card">
+        <span class="pill pill-blue">Neuf 2025</span>
+        <h3>Sandero Stepway Extreme — neuf</h3>
+        <div class="big-num" style="font-size:22px">Dès 18 650 €</div>
+        <div class="sub">ECO-G 120 ch boîte manuelle / ~19 300 € avec options (boîte auto, peinture)</div>
+        <ul class="checks">
+          <li>Garantie constructeur 3 ans complète</li>
+          <li>Garantie Zen activable dès la 1ère révision</li>
+          <li>Nouveau moteur ECO-G 120 ch (réservoir 49,6 L GPL)</li>
+          <li>Autonomie totale jusqu'à 1 480 km (Stepway)</li>
+          <li>Boîte automatique E-Shifter disponible</li>
+          <li>Plein équipement Extreme (caméra, angle mort, clim auto)</li>
+          <li class="warn">Prix d'achat le plus élevé</li>
+          <li class="warn">Décote de 20–25% dès la 1ère année</li>
+        </ul>
+      </div>
+
+      <div class="card best-value">
+        <span class="pill pill-green">Meilleur rapport qualité/prix</span>
+        <h3>Sandero Stepway Extreme — occasion</h3>
+        <div class="big-num" style="font-size:22px">14 000–16 000 €</div>
+        <div class="sub">ECO-G 100 ch, moins de 30 000 km — marché 2024/2025</div>
+        <ul class="checks">
+          <li>Économie de 3 000–5 000 € vs neuf</li>
+          <li>Garantie constructeur encore active si achetée récente</li>
+          <li>Garantie Zen activable immédiatement via révision Dacia</li>
+          <li>Motorisation ECO-G 100 ch fiable et bien rodée</li>
+          <li>Finition Extreme complète (équipement identique)</li>
+          <li>Décote maximale déjà absorbée</li>
+          <li class="warn">ECO-G 120 pas encore disponible en occasion</li>
+          <li class="warn">Vérifier historique entretien pour activer la Zen</li>
+          <li class="warn">Révisions à faire uniquement chez Dacia pour la Zen</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="info-box">
+      <strong>Conseil pour une occasion :</strong> avant d'acheter, demandez le carnet d'entretien complet. Si les révisions ont été faites chez un concessionnaire Dacia, la garantie Zen peut être activée ou reprise immédiatement à la prochaine révision. Si les révisions ont été faites ailleurs, la chaîne est interrompue — vous pouvez toutefois la réactiver si le véhicule a moins de 73 mois et moins de 120 000 km.
+    </div>
+  </div>
+
+  <!-- SECTION 5 : RÉSUMÉ -->
+  <div class="section">
+    <div class="section-label">L'essentiel à retenir</div>
+    <div class="grid grid-3">
+      <div class="card" style="text-align:center">
+        <div style="font-size:28px;margin-bottom:8px">🔒</div>
+        <h3 style="font-size:14px;margin-bottom:6px">3 ans inclus, sans condition</h3>
+        <p style="font-size:12px;color:var(--dacia-mid)">La garantie constructeur est automatique à l'achat. Aucune révision requise pour la maintenir.</p>
+      </div>
+      <div class="card" style="text-align:center">
+        <div style="font-size:28px;margin-bottom:8px">🔁</div>
+        <h3 style="font-size:14px;margin-bottom:6px">Zen = révision officielle annuelle</h3>
+        <p style="font-size:12px;color:var(--dacia-mid)">Chaque révision Essentielle (150–220 €) offre +1 an de garantie. Pas d'abonnement séparé.</p>
+      </div>
+      <div class="card" style="text-align:center">
+        <div style="font-size:28px;margin-bottom:8px">🏁</div>
+        <h3 style="font-size:14px;margin-bottom:6px">7 ans max, réseau Dacia uniquement</h3>
+        <p style="font-size:12px;color:var(--dacia-mid)">Un garage indépendant interrompt la Zen. Seul le réseau officiel Dacia peut la renouveler.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  Guide informatif basé sur les conditions officielles Dacia — <a href="https://www.dacia.fr/entretien/dacia-zen.html" target="_blank">dacia.fr/entretien/dacia-zen.html</a><br>
+  Tarifs et conditions susceptibles d'évoluer. Consultez votre concessionnaire pour un devis personnalisé.
+</footer>
+
+</body>
+</html>
